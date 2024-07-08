@@ -35,12 +35,12 @@ function RegisterPage() {
   console.log(errors);
 
   return (
-    <div className="h-[calc(100vh-7rem)] flex justify-center items-center">
+    <div className="h-screen w-full flex justify-center items-center">
       <form onSubmit={onSubmit} className="w-1/4">
-        <h1 className="text-slate-200 font-bold text-4xl mb-4">Register</h1>
+        <h1 className="text-black font-bold text-center text-4xl mb-4">Registrarse</h1>
 
         <label htmlFor="username" className="text-slate-500 mb-2 block text-sm">
-          Username:
+          Usuario:
         </label>
         <input
           type="text"
@@ -50,7 +50,7 @@ function RegisterPage() {
               message: "Username is required",
             },
           })}
-          className="p-3 rounded block mb-2 bg-slate-900 text-slate-300 w-full"
+          className="p-3 rounded block mb-2 bg-white text-black w-full"
           placeholder="yourUser123"
         />
 
@@ -71,7 +71,7 @@ function RegisterPage() {
               message: "Email is required",
             },
           })}
-          className="p-3 rounded block mb-2 bg-slate-900 text-slate-300 w-full"
+          className="p-3 rounded block mb-2 bg-white text-black w-full"
           placeholder="user@email.com"
         />
         {errors.email && (
@@ -89,7 +89,7 @@ function RegisterPage() {
               message: "Password is required",
             },
           })}
-          className="p-3 rounded block mb-2 bg-slate-900 text-slate-300 w-full"
+          className="p-3 rounded block mb-2 bg-white text-black w-full"
           placeholder="********"
         />
         {errors.password && (
@@ -112,7 +112,7 @@ function RegisterPage() {
               message: "Confirm Password is required",
             },
           })}
-          className="p-3 rounded block mb-2 bg-slate-900 text-slate-300 w-full"
+          className="p-3 rounded block mb-2 bg-white text-black w-full"
           placeholder="********"
         />
         {errors.confirmPassword && (

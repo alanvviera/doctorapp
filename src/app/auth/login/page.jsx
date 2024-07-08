@@ -1,8 +1,8 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
-import {useRouter} from 'next/navigation'
-import {useState} from 'react'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 function LoginPage() {
   const {
@@ -12,7 +12,7 @@ function LoginPage() {
   } = useForm();
   const router = useRouter()
   const [error, setError] = useState(null)
-  
+
   const onSubmit = handleSubmit(async (data) => {
     //console.log(data);
 
@@ -24,7 +24,7 @@ function LoginPage() {
 
     //console.log(res)
     if (res.error) {
-      setError("error loco" + res.error)
+      setError(res.error)
     } else {
       router.push('/dashboard')
       router.refresh()
@@ -33,7 +33,7 @@ function LoginPage() {
 
   return (
     <div className="h-screen w-full flex justify-center items-center">
-      <div className="w-1/4 rounded-lg shadow-sm border p-10  bg-gray-150" >
+      <div className="w-[%70] rounded-lg shadow-sm border p-10  bg-gray-150" >
         <form onSubmit={onSubmit} className="m-10 bg-gray-150" >
 
           {error && (
@@ -86,7 +86,7 @@ function LoginPage() {
             Login
           </button>
         </form>
-        </div>
+      </div>
     </div>
   );
 }
